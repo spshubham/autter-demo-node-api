@@ -44,6 +44,9 @@ describe("admin endpoint authorization", () => {
     "Basic live-token",
     "Bearer revoked-admin-token",
     "Bearer orphan-token",
+    "Bearer",
+    "admin-token",
+    "Bearer admin-token extra",
   ])("rejects missing or invalid credentials: %s", async (authorization) => {
     const res = await app.inject({
       method: "POST",
