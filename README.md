@@ -35,6 +35,11 @@ Example request:
 curl -H "Authorization: Bearer live-token" http://localhost:3000/api/me
 ```
 
+`POST /api/admin/users` requires a Bearer token for an active API key whose
+stored user has the `admin` role. A missing or invalid credential returns `401`;
+an authenticated non-admin returns `403`. The request body's `role` is ignored.
+The bundled `live-token` belongs to a member, so it cannot access this endpoint.
+
 ## Demo flow with Autter
 
 1. Fork this repository or create a working branch.
