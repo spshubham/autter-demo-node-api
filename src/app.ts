@@ -1,6 +1,6 @@
 import Fastify from "fastify";
 import { z } from "zod";
-import { projects, deliveries, auditLogs } from "./store.js";
+import { projects, deliveries, auditLogs, apiKeys, users } from "./store.js";
 import { requireAuth } from "./auth.js";
 const configSchema = z.object({
   name: z.string(),
@@ -15,10 +15,13 @@ export function buildApp() {
   app.get("/api/me", async (req) =>
     requireAuth(req.headers.authorization?.replace("Bearer ", "")),
   );
-  app.post("/api/admin/users", async (req) => {
-    const body = req.body as any;
-    if (body.role === "admin") return { ok: true, granted: "admin" };
-    return { ok: false };
+  app.post("/api/admin/users", async (req, reply) => {
+    const token = req.headers.authorization?.match(/^Bearer (\S+)$/i)?.[1];
+    const key = apiKeys.find((key) => key.token === token && key.active);
+    const user = key && users.find((user) => user.id === key.userId);
+    if (!user) return reply.status(401).send({ ok: false });
+    if (user.role !== "admin") return reply.status(403).send({ ok: false });
+    return { ok: true, granted: "admin" };
   });
   app.post("/api/webhooks/retry", async (req) => {
     const event = req.body as any;
