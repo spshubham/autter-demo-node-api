@@ -1,0 +1,50 @@
+src/app.test.ts
+  s_1b3427e478f74a::t_9a6c78a5a1b8db 47-49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "autter_version": "3.17.0",
+  "base_commit_sha": "d58ede527b04183092e45cca0822511f2a3cf7fc",
+  "branch": "fix/admin-role-check",
+  "prompts": {
+    "s_1b3427e478f74a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1fc60-53c2-70f3-9f78-108f5fc5301e",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "spshubham <shubhampatil7675@gmail.com>",
+      "messages_url": "cas:eda2ab3caf418dc53f797fc497e543c7a519ead1585ab33ec942d1679ddc495b",
+      "total_additions": 3,
+      "total_deletions": 0,
+      "accepted_lines": 3,
+      "overriden_lines": 0
+    }
+  },
+  "sessions": {
+    "s_1b3427e478f74a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1fc60-53c2-70f3-9f78-108f5fc5301e",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "spshubham <shubhampatil7675@gmail.com>",
+      "messages_url": "cas:eda2ab3caf418dc53f797fc497e543c7a519ead1585ab33ec942d1679ddc495b",
+      "stats": {
+        "total_additions": 3,
+        "total_deletions": 0,
+        "accepted_lines": 3,
+        "overriden_lines": 0,
+        "files": {
+          "src/app.test.ts": {
+            "total_additions": 3,
+            "total_deletions": 0,
+            "accepted_lines": 3,
+            "overriden_lines": 0
+          }
+        }
+      }
+    }
+  },
+  "integrity": {"v":1,"commit":"d58ede527b04183092e45cca0822511f2a3cf7fc","tree":"08cd6a52b788b64693df683cb06b4c0593675556","files":{"src/app.test.ts":"e3afcd9255c126f4665ba2e810c3e64ce318fcc3"},"digest":"f1c8e770fe6e7d404b77285eb02fbed5f672acdb0b6dce87dead8a00cb6e4a0e"}
+}
