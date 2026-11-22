@@ -3,7 +3,6 @@ import { describe, expect, test } from "vitest";
 
 // Minimum patched versions for the security updates applied in this change.
 const fixedVersions = {
-  tinypool: "2.1.1",
   "fast-uri": "3.1.9",
   fastify: "5.12.8",
   "find-my-way": "9.10.2",
@@ -11,6 +10,9 @@ const fixedVersions = {
   "source-map-js": "1.2.2",
   vite: "7.3.7",
   zod: "4.6.6",
+  "@vitest/mocker": "4.1.11",
+  nanoid: "3.3.16",
+  vitest: "4.1.11",
 } as const;
 
 function isAtLeast(actual: string, minimum: string) {
